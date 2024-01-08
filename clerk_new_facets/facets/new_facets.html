@@ -53,11 +53,13 @@
             {% endfor %}
         </div>
         <script type="text/javascript">
+            // Create a toggle button for each facet group
             let clerk_toggle_btns = document.querySelectorAll('.clerk_facets_toggle');
             let clerk_plus_icons = document.querySelectorAll('.clerk_plus_icon');
             let clerk_minus_icons = document.querySelectorAll('.clerk_minus_icon');
             let clerk_facet_option_wrappers = document.querySelectorAll('.clerk_facet_option_wrapper');
 
+            // Button is clicked -> toggle the icon and the facet options
             clerk_toggle_btns.forEach((btn, index) => {
                 btn.addEventListener('click', () => {
                     clerk_minus_icons[index].classList.toggle('hidden');
