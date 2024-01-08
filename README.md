@@ -17,16 +17,16 @@ This repository serves as a hub for my diverse range of personal projects. From 
 
 Here's a list of projects you can find in this repository:
 
-1. **Project One**
+1. **New Facets**
 
-    - _Description:_ Brief description of the project.
-    - _Technologies:_ List of technologies used.
-    - _Status:_ Ongoing/Completed/On-hold.
+    - _Description:_ Revamp search page facets for a sleek, user-friendly experience with a fresh design and enhanced filtering options.
+    - _Technologies:_ HTML, CSS, JS.
+    - _Status:_ On-hold (Facets is getting depricated in the future).
 
-2. **Project Two**
-    - _Description:_ Brief description of the project.
+2. **Most Popular Search**
+    - _Description:_ Integrate live search with trending queries, offering users instant access to the most popular and relevant searches in real time.
     - _Technologies:_ List of technologies used.
-    - _Status:_ Ongoing/Completed/On-hold.
+    - _Status:_ Done (Live search will be depricated in the future).
 
 <!-- Add more projects as needed -->
 
