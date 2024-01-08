@@ -37,7 +37,7 @@ To get started with any project in this repository, follow these steps:
 
    ```bash
    git clone git@github.com:svennif/clerk_projects.git
-   ``
+   ```
 2. Navigate to the project of interest:
     ```bash
     cd clerk_projects
