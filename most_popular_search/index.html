@@ -1,0 +1,52 @@
+<div class="clerk-popular-search" style="display: none">
+	<h2 class="clerk-instant-search-title">Most popular search terms</h2>
+	<div class="clerk-instant-search-category clerk-instant-search-key-selectable"></div>
+	<script>
+    (function() {
+        function getPopularSearchTerms() {
+			if (!!window.clerkSuggestions) {
+				appendSuggestions()
+			}
+			Clerk(
+				"call",
+				"search/popular",
+				{
+					limit: 8,
+				},
+				function (response) {
+					if (response.result) {
+						window.clerkSuggestions = response.result
+						appendSuggestions()
+					}
+				}
+			)
+		}
+    })
+
+    function appendSuggestions() {
+        const templateSuggestion =
+            '<a href="${url}" class="clerk-popular-search-item">' +
+            "<span>${search_query}</span>" +
+            "</a>"
+            
+        const suggestionsWrapper = document.querySelector(".clerk-instant-search-category.clerk-instant-search-key-selectable")
+        if (suggestionsWrapper.textContent.trim().length > 1) {
+            return false
+        }
+        window.clerkSuggestions.forEach((item) => {
+            const suggestionUrl = "/catalogsearch/result/?q=" + item
+            let newTemplate = templateSuggestion
+                .replace("${search_query}", item)
+                .replace("${url}", suggestionUrl)
+            suggestionsWrapper.insertAdjacentHTML('beforeend', newTemplate)
+        });
+        const clerkSuggestions = document.querySelector(".clerk-popular-search")
+        if (
+            window.getComputedStyle(clerkSuggestions).display === 'none' &&
+            window.clerkSuggestions.length
+        ) {
+            clerkSuggestions.style.display = 'block'
+        }
+    }
+	</script>
+</div>
